@@ -5,4 +5,4 @@ Repositório de trabalho relativo ao desenho preliminar da PCB do painel solar 1
 Esta versão agrega o projeto KiCad, os footprints preliminares e a documentação técnica de apoio à revisão interna.
 
 ## Conteúdo
-- Projeto KiCad.
+- Projeto KiCad da PCB.
