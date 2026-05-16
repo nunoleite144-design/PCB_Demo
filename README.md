@@ -6,3 +6,8 @@ Esta versão agrega o projeto KiCad, os footprints preliminares e a documentaç�
 
 ## Conteúdo
 - Projeto KiCad da PCB.
+- Footprints preliminares das células e da interface de saída.
+- Documentação técnica de suporte à revisão interna.
+
+## Estado do desenvolvimento
+A versão atual constitui uma base de revisão interna. O desenho contempla duas células por face, a orientação das abas para o exterior, a configuração elétrica em série 2S e uma zona dedicada à ligação ao EPS.
