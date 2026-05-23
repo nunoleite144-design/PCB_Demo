@@ -92,7 +92,7 @@
 		(pin "4" (uuid "2cf9ccc2-250f-4efb-bb8f-d77a9c816262"))
 	)
 	(symbol (lib_id "ICARUS:TVS_DNP_2Pin") (at 130.81 106.5 0) (unit 1) (exclude_from_sim no) (in_bom no) (on_board yes) (dnp yes) (uuid "b290ed61-6c64-47f2-8693-83df60d874c3")
-		(property "Reference" "D_TVS_DNP" (at 130.81 101.0 0) (effects (font (size 1.27 1.27))))
+		(property "Reference" "D1" (at 130.81 101.0 0) (effects (font (size 1.27 1.27))))
 		(property "Value" "TVS_OPTIONAL_DNP" (at 130.81 112.0 0) (effects (font (size 1.27 1.27))))
 		(property "Footprint" "Diode_SMD:D_SOD-123" (at 130.81 115.0 0) (effects (font (size 1.27 1.27)) hide))
 		(pin "1" (uuid "c6737429-290a-4734-ad38-22a655a1c4ad"))
