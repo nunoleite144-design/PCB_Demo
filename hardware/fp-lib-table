@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name "ICARUS_Connector")(type "KiCad")(uri "${KIPRJMOD}/footprints/ICARUS_Connector.pretty")(options "")(descr "ICARUS solar panel connector footprints"))
+  (lib (name "ICARUS_Solar")(type "KiCad")(uri "${KIPRJMOD}/footprints/ICARUS_Solar.pretty")(options "")(descr "ICARUS solar cell footprints"))
+)
