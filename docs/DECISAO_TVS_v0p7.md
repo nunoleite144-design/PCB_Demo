@@ -59,18 +59,49 @@ A análise propôs três caminhos:
 
 ### Decisão de componente para v0.7
 
-Adoptar **B2 (clamp activo Zener + MOSFET)**. Substituir `D1` actual (TVS DNP em SOD-323) por:
+Adoptar **B2 com TL431** (precisão ±1 %, ver tabela detalhada na alternativa abaixo). Substituir `D1` actual (TVS DNP em SOD-323) por:
 
-- **Z1**: Zener BZX84-C5V1 em SOT-23 (`Vz = 5.1 V`, tol. ±5 %)
-- **Q1**: N-MOSFET small-signal em SOT-23 (p.ex. BSS138 ou 2N7002)
-- **R1**: 1 kΩ 0603 (bias da gate)
-- Topologia: gate de Q1 puxada pelo zener; quando `V_PANEL_POS > 5.1 V + Vgs(th)`, Q1 conduz e shunt do excesso para PANEL_NEG.
+- **U1**: TL431AFTA em SOT-23 (referência precisão 2.495 V ±1 %)
+- **Q1**: N-MOSFET BSS138 em SOT-23 (shunt de potência)
+- **R1**: 10 kΩ 0603 ±1 % (divisor superior)
+- **R2**: 8.87 kΩ 0603 ±1 % E96 (divisor inferior — fixa clamp em 5.30 V)
+- **R3**: 100 Ω 0603 (limitação de corrente cátodo → gate)
+
+Topologia: divisor `R1/R2` em `PANEL_POS` produz `Vref = 2.495 V` quando `V_PANEL = 5.30 V`. Acima disso, o cátodo do TL431 sink corrente, puxa gate de Q1 para terra → Q1 conduz e faz shunt do excesso entre `PANEL_POS` e `PANEL_NEG`.
 
 Footprint changes vs v0.6:
 - Remover `D1` (SOD-323 DNP).
-- Adicionar `Z1` (SOT-23), `Q1` (SOT-23), `R1` (0603) — espaço actual de `D1` (≈ 6 × 4 mm) acomoda os três se compactos.
+- Adicionar `U1` (SOT-23), `Q1` (SOT-23), `R1`, `R2`, `R3` (3× 0603) ≈ 8 × 5 mm.
+- Re-layout local em torno da posição actual de `D1` (120, 138) — a área disponível acomoda.
 
-**Alternativa mais simples** (se houver espaço apertado): pesquisar TVS família "low-clamping" com `Vbr` ≤ 5.4 V → re-avaliar antes do kick-off de v0.7. Bom candidato a investigar: **Nexperia PESDXL2BT** ou similar; AzurSpace pode também recomendar TVS qualificado para espaço.
+**Variante fallback (mais simples mas menos preciso)** — se houver pressão de área/BOM cost:
+- **Z1**: Zener BZX84-C5V1 em SOT-23 (`Vz = 5.1 V`, tol. ±5 %)
+- **Q1**: BSS138 SOT-23
+- **R1**: 1 kΩ 0603
+- Clamp em ≈ 5.1 V + Vgs(th) ≈ 5.9 V, com tolerância ±0.25 V do Zener. **Atenção**: janela apertada (5.0 V Vmp a 5.5 V EPS), tolerância pode comprometer o clamp. Só usar se TL431 for inviável.
+
+**Alternativa single-part investigada e descartada (2026-05-28):**
+- Bourns CDSOD323-T05L (SOD-323): `Vrwm = 5.0 V`, mas `Vbr_min = 6.0 V` → não clamp dentro do limite.
+- TI TSDxx: variantes 3.6 V/4.5 V conduzem em MPPT (perde potência) ou 5.5 V/6.0 V não clamp.
+- Nexperia PESDxL2BT: família ESD bidireccional, `Vbr` demasiado alto.
+- Raiz do problema: TVS standard tem `Vbr ≈ 1.2 × Vrwm` mínimo. Para `Vrwm ≥ 4.8 V` (acima de `Vmp_2S = 4.74 V`), o `Vbr_min` cai para ≥ 5.8 V, fora da janela [5.0, 5.4 V] requerida.
+- **Conclusão**: não existe TVS comercial single-part que cubra a janela. Clamp activo (Z1+Q1+R1, ou TL431+Q1+R1+R2) é a abordagem correcta.
+
+**Variante recomendada — TL431 + MOSFET (preferível ao Zener+MOSFET):**
+
+| Componente | Função | Referência sugerida |
+|---|---|---|
+| `U1` (TL431) | Referência precisão 2.495 V ±1 % | SOT-23, p.ex. Diodes Inc TL431AFTA |
+| `R1` (10 kΩ) | Divisor superior, para `Vref = 2.495 V` corresponder a `Vclamp = 5.30 V` | 0603, ±1 % |
+| `R2` (8.91 kΩ) | Divisor inferior (`R2 = R1 × Vref/(Vclamp−Vref) = 10k × 2.495/2.805`) | 0603, ±1 %, valor preferido 8.87 kΩ E96 |
+| `Q1` | N-MOSFET small-signal a fazer shunt; `Vgs(th)` < 2 V | SOT-23, BSS138 ou DMN2300U |
+| `R3` (100 Ω) | Limitação de corrente do cátodo do TL431 para a gate de Q1 | 0603 |
+
+Vantagem vs Zener+MOSFET: precisão ±1 % do clamp em vez de ±5 % do Zener. Importante porque a janela [5.0, 5.4] V é apertada — tolerância larga do Zener (5.1 V ±5 % = 4.85–5.36 V) pode fechar a janela. TL431 fixa o clamp em 5.30 V ±0.05 V.
+
+Espaço ocupado: 5 footprints SMD (TL431 SOT-23 + 3 resistors 0603 + 1 MOSFET SOT-23) ≈ 8 × 5 mm. Mais que o D1 actual SOD-323, mas área PCB tem espaço (canto de D1 actual + zona adjacente).
+
+**AzurSpace / fornecedor espacial:** se preferes TVS qualificado, é praticamente impossível ter um na janela apertada — a recomendação dos fabricantes de células será tipicamente "use shunt regulator activo".
 
 ## 4. Trabalho concreto para v0.7
 
