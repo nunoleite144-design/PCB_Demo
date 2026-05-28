@@ -2,6 +2,8 @@
 
 Data: 2026-05-28
 
+> **⚠️ SUPERSEDED em v0.7 (2026-05-28, mais tarde no mesmo dia).** Mudança de topologia para paralelo (1S2P) — ver [VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md](VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md). Em paralelo, `Voc_max` cold ≈ 3.33 V, OVP não é necessária e o EPS já tem protecção integrada acima de 5.5 V. **`D1` foi removido por completo na v0.7**; o clamp TL431+MOSFET não é implementado. Este documento mantém-se como histórico do trade-off antes da mudança de topologia.
+
 Estado: decisão de engenharia para a próxima revisão (v0.7). Aplica-se ao próximo PCB; v0.6 mantém-se como release de revisão interna sem alteração de BOM.
 
 Relacionado: [ANALISE_TERMICA_VOC_v0p6.md](ANALISE_TERMICA_VOC_v0p6.md), [VALIDACAO_DATASHEETS_v0p6.md](VALIDACAO_DATASHEETS_v0p6.md).

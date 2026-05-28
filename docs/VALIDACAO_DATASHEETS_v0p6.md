@@ -25,6 +25,15 @@ Margens de corrente/potência:
 - Imp ≈ 0.54 A; Isc ≈ 0.56 A (Jsc 18.7 mA/cm² × 30.18 cm²) << 1.8 A → margem ampla de corrente.
 - Pmp_2S ≈ 2.56 W; Vin típica do EPS = 4.66 V vs Vmp_2S = 4.74 V → ponto de operação bem casado.
 
+## Actualização v0.7 — OVP integrada confirmada
+
+A leitura da Tabela 12 e da Secção "Solar Panel Channels" do EPS I User Manual confirma:
+
+- **"Over-voltage protection — engages above 5.5 V"** (citação directa). O limite 5.5 V é trigger de OVP integrada, não destrutivo absoluto.
+- **`Voltage Min = 0 V`** na Tabela 12 — UVLO do boost ≈ `VF_blocking_diode + 0.5 V` ≈ 0.78 V.
+
+Estas duas confirmações alteram o veredicto da Secção seguinte (a análise de risco quantificada continua tecnicamente correcta para 2S1P, mas a urgência é menor que era na v0.6). Mais importante: a v0.7 muda para 1S2P e o risco de sobretensão **desaparece** — ver [VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md](VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md).
+
 ## Risco de sobretensão (quantificado)
 
 `Voc_2S` @ 25 °C BOL = 5.40 V, a apenas 0.10 V do máximo de 5.5 V. Coeficiente 2S = −12 mV/°C.
