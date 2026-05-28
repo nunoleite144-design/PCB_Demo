@@ -55,7 +55,6 @@
 	(net 1 "PANEL_POS")
 	(net 2 "SERIES_MID")
 	(net 3 "PANEL_NEG")
-	(net 4 "NC")
 	(gr_rect
 		(start 57.5 57.5)
 		(end 152.5 152.5)
