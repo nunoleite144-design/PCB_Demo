@@ -3,7 +3,7 @@
 	(generator "pcbnew")
 	(generator_version "8.0")
 	(layer "F.Cu")
-		(descr "Footprint preliminar para a celula solar TJ3xSCA-4080 / TJ30SCA-4080 CIC, com corpo nominal de 80.15 mm x 40.15 mm. Pad 1 = terminal NEG; pad 2 = terminal POS. A geometria final dos contactos deve ser confirmada com a documentacao do fornecedor antes de fabrico.")
+		(descr "Footprint preliminar para a celula solar TJ3xSCA-4080 / TJ30SCA-4080 CIC, corpo nominal 80.15 mm x 40.15 mm. Pad 1 = NEG (busbar/tabs da frente, F.Cu); pad 2 = POS (contacto de verso da celula). A celula e montada na face do componente (F.Cu), por isso o contacto de verso (pad 2) fica em F.Cu, nao em B.Cu. O esquema real de contacto (bond condutivo de verso vs tab de wrap-around), a geometria/posicao das tabs e a polaridade tem de ser confirmados com o desenho de montagem CIC do fornecedor antes de fabrico.")
 		(tags "ICARUS celula solar CIC TJ3xSCA-4080 TJ30SCA-4080 preliminary")
 	(property "Reference" "SC**" (at 0 -25.5 0) (layer "F.SilkS")
 		(effects (font (size 1 1) (thickness 0.15)))
@@ -50,7 +50,7 @@
 		(layer "F.Fab")
 		(effects (font (size 0.8 0.8) (thickness 0.12)) (justify center))
 	)
-		(fp_text user "PAD 1 = NEG | PAD 2 = POS"
+		(fp_text user "PAD 1 = NEG (tabs/frente) | PAD 2 = POS (verso, F.Cu)"
 			(at 0 22.2 0)
 			(layer "F.Fab")
 			(effects (font (size 0.8 0.8) (thickness 0.12)) (justify center))
@@ -82,19 +82,19 @@
 		(pad "2" smd roundrect
 		(at -26.0 0)
 		(size 8.0 8.0)
-		(layers "B.Cu" "B.Mask")
+		(layers "F.Cu" "F.Mask")
 		(roundrect_rratio 0.12)
 	)
 		(pad "2" smd roundrect
 		(at 0 0)
 		(size 8.0 8.0)
-		(layers "B.Cu" "B.Mask")
+		(layers "F.Cu" "F.Mask")
 		(roundrect_rratio 0.12)
 	)
 		(pad "2" smd roundrect
 		(at 26.0 0)
 		(size 8.0 8.0)
-		(layers "B.Cu" "B.Mask")
+		(layers "F.Cu" "F.Mask")
 		(roundrect_rratio 0.12)
 	)
 )
