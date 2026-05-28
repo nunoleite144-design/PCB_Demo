@@ -30,27 +30,26 @@ Foram corrigidos textos e labels que indicavam a polaridade invertida de `SC2`.
 
 ## Estado dos relatorios
 
-Ficheiros gerados:
+Ficheiros gerados (corrida actual, KiCad 10.0 Windows):
 
-- `reports/ERC_v0p6.rpt`
-- `reports/DRC_v0p6.rpt`
-- `reports/DRC_v0p6_layout_only.rpt`
+- `reports/ERC_v0p6_kicad10_win.rpt`
+- `reports/DRC_v0p6_kicad10_win.rpt`
 - `reports/v0p6_top.svg`
 - `reports/v0p6_bottom.svg`
 - `reports/v0p6_fab.svg`
 
-Resultado ERC CLI:
+Nota: as corridas anteriores no macOS (`DRC_v0p6.rpt`, `DRC_v0p6_layout_only.rpt`, `ERC_v0p6.rpt`) abortaram com exit code `-1` e foram removidas em 2026-05-28 como obsoletas.
 
-- KiCad CLI 10.0.3 gerou `reports/ERC_v0p6.rpt`.
-- Resultado: `0 errors`, `3 warnings`.
-- Os 3 warnings sao de resolucao de bibliotecas de footprints (`ICARUS_Solar` e `ICARUS_Connector`) no contexto do CLI. Nao sao erros eletricos.
+Resultado ERC CLI (Windows KiCad 10.0):
+
+- KiCad CLI 10.0 gerou `reports/ERC_v0p6_kicad10_win.rpt`.
+- Resultado: `0 errors`, 3 warnings de resolucao de bibliotecas de footprints (`ICARUS_Solar` e `ICARUS_Connector`) no contexto do CLI. Nao sao erros eletricos.
 - As tabelas locais foram confirmadas: `hardware/sym-lib-table` aponta para `ICARUS.kicad_sym`; `hardware/fp-lib-table` aponta para `ICARUS_Solar` e `ICARUS_Connector`.
 - Waiver tecnico: `test_logs/LIBRARY_WARNINGS_WAIVER_v0p6.md`.
 
-Resultado DRC CLI:
+Resultado DRC CLI (Windows KiCad 10.0):
 
-- O DRC CLI abortou no macOS com exit code `-1` (registado em `reports/DRC_v0p6.rpt` e `reports/DRC_v0p6_layout_only.rpt`).
-- Em 2026-05-28 o DRC foi corrido com sucesso no KiCad 10.0 (Windows), com schematic parity: `reports/DRC_v0p6_kicad10_win.rpt` (ERC: `reports/ERC_v0p6_kicad10_win.rpt`).
+- DRC corrido com sucesso, com schematic parity: `reports/DRC_v0p6_kicad10_win.rpt`.
 - A primeira corrida (estado anterior) tinha 11 erros de layout, incluindo um curto `PANEL_POS`/`PANEL_NEG` e pistas dentro dos furos M3, e ainda a anti-serie das celulas (ver `CORRECAO_TOPOLOGIA_SERIE_v0p6.md`).
 - Apos a correcao de topologia (serie 2S real) e o reroute completo, a corrida atual da:
   - Paridade esquematico<->PCB: **0 problemas**. Itens desconectados: **0**. Curtos: **0**. `clearance`/`hole_clearance`: **0**.
