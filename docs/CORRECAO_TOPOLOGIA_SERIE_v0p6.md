@@ -2,6 +2,8 @@
 
 Data: 2026-05-28
 
+> **⚠️ SUPERSEDED em v0.7 (2026-05-28).** A v0.7 mudou para topologia paralela (1S2P) — ver [VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md](VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md). A net `SERIES_MID` deixou de existir; ambas as células partilham `PANEL_POS` e `PANEL_NEG`. Este documento mantem-se como história da correccao anti-serie que aplicamos na v0.6.
+
 Estado: correcao de erro critico de topologia. Pre-validacao fisica. Nao aprovado para fabrico nem voo.
 
 ## Problema

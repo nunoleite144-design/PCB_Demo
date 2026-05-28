@@ -2,6 +2,8 @@
 
 Data: 2026-05-24
 
+> **⚠️ SUPERSEDED em v0.7 (2026-05-28).** Os relatorios e estado descritos abaixo referem-se a v0.6 (2S1P). A v0.7 (1S2P paralelo, J1 em B.Cu) tem relatorios proprios em `reports/ERC_v0p7_kicad10_win.rpt` e `reports/DRC_v0p7_kicad10_win.rpt` — ver [VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md](VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md).
+
 Estado: revisao interna pre-validacao fisica. Nao aprovado para fabrico final nem para voo.
 
 ## Correcao de polaridade

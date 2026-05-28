@@ -2,6 +2,8 @@
 
 Data: 2026-05-24
 
+> **ℹ️ Continua valido em v0.7 (2026-05-28).** A topologia mudou para 1S2P paralelo mas a geometria/placement das celulas (95×95 mm board, mesmos centros, mesmo gap) nao mudou. Esta analise mantem-se inalterada para v0.7.
+
 Estado: revisao interna pre-validacao fisica. Nao aprovado para fabrico final nem para voo.
 
 ## Referencia usada

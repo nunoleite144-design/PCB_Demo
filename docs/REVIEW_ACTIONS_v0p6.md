@@ -2,6 +2,8 @@
 
 Data: 2026-05-24
 
+> **⚠️ SUPERSEDED em v0.7 (2026-05-28).** A revisao v0.7 mudou a topologia para 1S2P paralelo e o J1 para B.Cu — ver [VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md](VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md). As accoes abaixo referem-se ao baseline 2S1P da v0.6.
+
 Estado: pronta para revisao tecnica interna apos revisao GUI da equipa. Nao e fabrication-ready nem flight-ready.
 
 ## Alteracoes feitas

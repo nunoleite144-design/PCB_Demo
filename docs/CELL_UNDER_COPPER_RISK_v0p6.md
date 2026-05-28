@@ -2,6 +2,8 @@
 
 Data: 2026-05-24
 
+> **⚠️ Parcialmente SUPERSEDED em v0.7 (2026-05-28).** A topologia mudou para 1S2P paralelo e o J1 esta agora em B.Cu — ver [VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md](VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md). A net `SERIES_MID` listada abaixo nao existe na v0.7. A preocupacao geral (cobre sob celulas tem de ser consistente com a polaridade do contacto de verso) continua valida — em v0.7 todo o cobre sob ambas as celulas e' `PANEL_POS` (corredor B.Cu direito).
+
 Estado: risco documentado para revisao interna. Nao aprovado para fabrico final nem para voo.
 
 ## Alteracao feita

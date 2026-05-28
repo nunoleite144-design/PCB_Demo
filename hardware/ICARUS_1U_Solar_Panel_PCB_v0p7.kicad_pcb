@@ -7,11 +7,11 @@
 	)
 	(paper "A4")
 	(title_block
-		(title "ICARUS 1U Solar Panel PCB v0.6")
-		(date "2026-05-24")
-		(rev "0.6-internal-review")
+		(title "ICARUS 1U Solar Panel PCB v0.7")
+		(date "2026-05-28")
+		(rev "0.7")
 		(company "Porto Space Team - ICARUS")
-		(comment 1 "2S1P baseline; EPS I solar pinout: pins 1/2 PV-, pins 3/4 PV+")
+		(comment 1 "1S2P parallel; J1 (Molex) on B.Cu; EPS I solar pinout: pins 1/2 PV-, pins 3/4 PV+")
 		(comment 2 "Internal review only: not flight-ready or fabrication-ready without physical validation")
 	)
 	(layers
