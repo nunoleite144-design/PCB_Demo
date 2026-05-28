@@ -2,6 +2,8 @@
 
 Data: 2026-05-28
 
+> **⚠️ SUPERSEDED em v0.7 (2026-05-28).** A topologia mudou para paralelo (1S2P) — ver [VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md](VALIDACAO_TOPOLOGIA_PARALELO_v0p7.md). Em paralelo, `Voc_max` em pior caso (BOL, −80 °C) ≈ 3.33 V, muito abaixo dos 5.5 V — o risco que esta análise quantificou **deixa de existir**. Adicionalmente, a leitura da Tabela 12 do EPS I confirma que os 5.5 V são *trigger de OVP integrada*, não destrutivos absolutos. Esta análise mantém-se como histórico técnico válido para 2S1P, mas as conclusões e acções **não se aplicam** à v0.7.
+
 Estado: análise de risco eléctrico. Pré-validação física. Conclusões dependem de confirmação EnduroSat sobre a natureza do limite 5.5 V (operating vs absolute maximum).
 
 Relacionado: [VALIDACAO_DATASHEETS_v0p6.md](VALIDACAO_DATASHEETS_v0p6.md), [CORRECAO_TOPOLOGIA_SERIE_v0p6.md](CORRECAO_TOPOLOGIA_SERIE_v0p6.md), [VALIDACAO_LOCAL_v0p6.md](VALIDACAO_LOCAL_v0p6.md).
