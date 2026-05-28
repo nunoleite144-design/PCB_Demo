@@ -56,6 +56,15 @@ Razao: ao guardar o projeto, KiCad copia o footprint para dentro do `.kicad_pcb`
   - (B2) Aceitavel para revisao interna: manter como esta, com este waiver. Os footprints embebidos sao auto-suficientes — o PCB pode ser fabricado com a versao actual sem depender da lib KiCad instalada na maquina de fabrico.
 - v0.6 adopta (B2) para esta release interna. (B1) e accao de fecho antes do CDR.
 
+## Actualizacao v0.7 (2026-05-28)
+
+Na v0.7 o `D1` (TVS DNP) foi removido (paralelo torna desnecessario), eliminando 1 warning automaticamente. Adicionalmente, foi aplicada manualmente a opcao (B1) — os 4 footprints TestPoint (`TP1`, `TP3`, `TP4`, `TP5`) e os 4 MountingHole (`H1`-`H4`) foram sincronizados com as versoes da biblioteca standard do KiCad 10.0 (`C:\Program Files\KiCad\10.0\share\kicad\footprints\TestPoint.pretty`, `...\MountingHole.pretty`). Resultado em `reports/DRC_v0p7_kicad10_win.rpt`:
+
+- **0 erros, 3 warnings**.
+- Os 3 warnings restantes pertencem todos ao Grupo A (`lib_footprint_issues` para `ICARUS_Solar` em SC1/SC2 e `ICARUS_Connector` em J1) — limitacao do CLI sobre libs locais, mantida sob waiver.
+
+Em v0.7 o waiver e portanto apenas para Grupo A. Grupo B esta resolvido.
+
 ## Limites deste waiver
 
 - Estes warnings nao sao aprovacao de footprints.

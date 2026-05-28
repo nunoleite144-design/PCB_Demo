@@ -1,8 +1,8 @@
 ** Drc report for ICARUS_1U_Solar_Panel_PCB_v0p7.kicad_pcb **
-** Created on 2026-05-28T17:46:55 **
+** Created on 2026-05-28T17:55:46 **
 ** Report includes: Errors, Warnings, Exclusions **
 
-** Found 11 DRC violations **
+** Found 3 DRC violations **
 [lib_footprint_issues]: A biblioteca de footprints 'ICARUS_Solar' não está ativada na configuração atual
     Local override; warning
     @(105.0000 mm, 84.4250 mm): Footprint SC1
@@ -12,30 +12,6 @@
 [lib_footprint_issues]: A biblioteca de footprints 'ICARUS_Connector' não está ativada na configuração atual
     Local override; warning
     @(105.0000 mm, 150.0000 mm): Footprint J1
-[lib_footprint_mismatch]: O footprint 'TestPoint_Pad_D2.0mm' não corresponde à cópia na biblioteca 'TestPoint'
-    Local override; warning
-    @(60.5000 mm, 84.0000 mm): Footprint TP1
-[lib_footprint_mismatch]: O footprint 'TestPoint_Pad_D2.0mm' não corresponde à cópia na biblioteca 'TestPoint'
-    Local override; warning
-    @(60.5000 mm, 126.0000 mm): Footprint TP3
-[lib_footprint_mismatch]: O footprint 'TestPoint_Pad_D2.5mm' não corresponde à cópia na biblioteca 'TestPoint'
-    Local override; warning
-    @(149.5000 mm, 84.0000 mm): Footprint TP4
-[lib_footprint_mismatch]: O footprint 'TestPoint_Pad_D2.5mm' não corresponde à cópia na biblioteca 'TestPoint'
-    Local override; warning
-    @(60.5000 mm, 137.0000 mm): Footprint TP5
-[lib_footprint_mismatch]: O footprint 'MountingHole_3.2mm_M3' não corresponde à cópia na biblioteca 'MountingHole'
-    Local override; warning
-    @(62.5000 mm, 62.5000 mm): Footprint H1
-[lib_footprint_mismatch]: O footprint 'MountingHole_3.2mm_M3' não corresponde à cópia na biblioteca 'MountingHole'
-    Local override; warning
-    @(147.5000 mm, 62.5000 mm): Footprint H2
-[lib_footprint_mismatch]: O footprint 'MountingHole_3.2mm_M3' não corresponde à cópia na biblioteca 'MountingHole'
-    Local override; warning
-    @(62.5000 mm, 147.5000 mm): Footprint H3
-[lib_footprint_mismatch]: O footprint 'MountingHole_3.2mm_M3' não corresponde à cópia na biblioteca 'MountingHole'
-    Local override; warning
-    @(147.5000 mm, 147.5000 mm): Footprint H4
 
 ** Found 0 unconnected pads **
 
