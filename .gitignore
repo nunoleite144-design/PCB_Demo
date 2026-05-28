@@ -4,3 +4,6 @@
 fp-info-cache
 *.lck
 ~*.*
+
+# Local PDF text extracts
+eps.txt
