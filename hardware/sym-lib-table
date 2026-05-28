@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "ICARUS")(type "KiCad")(uri "${KIPRJMOD}/ICARUS.kicad_sym")(options "")(descr "ICARUS solar panel schematic symbols"))
+)

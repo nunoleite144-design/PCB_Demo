@@ -1,0 +1,11 @@
+DRC layout-only report (2026-05-24, KiCad CLI 10.0.3)
+
+Command attempted:
+/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli pcb drc --severity-all --format report -o ../reports/DRC_v0p6_layout_only.rpt ICARUS_1U_Solar_Panel_PCB_v0p6.kicad_pcb
+
+Result:
+The KiCad CLI DRC process aborted on macOS with exit code -1 before generating a DRC report.
+
+Status:
+- No layout-only DRC pass is claimed from this file.
+- Use KiCad GUI DRC as the authoritative DRC evidence for v0.6.
