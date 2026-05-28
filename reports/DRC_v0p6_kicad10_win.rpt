@@ -1,52 +1,8 @@
 ** Drc report for ICARUS_1U_Solar_Panel_PCB_v0p6.kicad_pcb **
-** Created on 2026-05-28T01:48:10 **
+** Created on 2026-05-28T02:35:15 **
 ** Report includes: Errors, Warnings, Exclusions **
 
-** Found 24 DRC violations **
-[hole_clearance]: Violação do isolamento do furo (configuração das restrições do furo isolamento 0,2500 mm; atual 0,0000 mm)
-    Rule: configuração das restrições do furo; error
-    @(60.5000 mm, 126.0000 mm): Track [PANEL_POS] on F.Cu, length 21.5750 mm
-    @(62.5000 mm, 147.5000 mm): NPTH pad of H3
-[shorting_items]: Itens em curto-circuito de duas redes (redes PANEL_POS e PANEL_NEG)
-    Local override; error
-    @(73.5000 mm, 147.5750 mm): Track [PANEL_POS] on F.Cu, length 63.0000 mm
-    @(126.0000 mm, 148.5000 mm): Via [PANEL_NEG] on F.Cu - B.Cu
-[hole_clearance]: Violação do isolamento do furo (configuração das restrições do furo isolamento 0,2500 mm; atual 0,0000 mm)
-    Rule: configuração das restrições do furo; error
-    @(136.5000 mm, 62.4250 mm): Track [PANEL_NEG] on B.Cu, length 13.5000 mm
-    @(147.5000 mm, 62.5000 mm): NPTH pad of H2
-[hole_clearance]: Violação do isolamento do furo (configuração das restrições do furo isolamento 0,2500 mm; atual 0,0000 mm)
-    Rule: configuração das restrições do furo; error
-    @(150.0000 mm, 148.5000 mm): Track [PANEL_NEG] on B.Cu, length 46.2500 mm
-    @(147.5000 mm, 147.5000 mm): NPTH pad of H4
-[clearance]: Violação do isolamento ( isolamento 0,2000 mm; atual 0,1500 mm)
-    Local override; error
-    @(73.5000 mm, 147.5750 mm): Track [PANEL_POS] on F.Cu, length 63.0000 mm
-    @(103.7500 mm, 148.5000 mm): Track [PANEL_NEG] on F.Cu, length 1.6250 mm
-[hole_clearance]: Violação do isolamento do furo (configuração das restrições do furo isolamento 0,2500 mm; atual 0,0000 mm)
-    Rule: configuração das restrições do furo; error
-    @(60.5000 mm, 147.5750 mm): Track [PANEL_POS] on F.Cu, length 13.0000 mm
-    @(62.5000 mm, 147.5000 mm): NPTH pad of H3
-[hole_clearance]: Violação do isolamento do furo (configuração das restrições do furo isolamento 0,2500 mm; atual 0,0000 mm)
-    Rule: configuração das restrições do furo; error
-    @(60.5000 mm, 84.0000 mm): Track [PANEL_NEG] on F.Cu, length 21.5750 mm
-    @(62.5000 mm, 62.5000 mm): NPTH pad of H1
-[clearance]: Violação do isolamento ( isolamento 0,2000 mm; atual 0,1500 mm)
-    Local override; error
-    @(73.5000 mm, 147.5750 mm): Track [PANEL_POS] on F.Cu, length 63.0000 mm
-    @(103.7500 mm, 148.5000 mm): Track [PANEL_NEG] on F.Cu, length 1.6250 mm
-[clearance]: Violação do isolamento ( isolamento 0,2000 mm; atual 0,1500 mm)
-    Local override; error
-    @(73.5000 mm, 147.5750 mm): Track [PANEL_POS] on F.Cu, length 63.0000 mm
-    @(126.0000 mm, 149.0000 mm): Track [PANEL_NEG] on F.Cu, length 0.5000 mm
-[hole_clearance]: Violação do isolamento do furo (configuração das restrições do furo isolamento 0,2500 mm; atual 0,0000 mm)
-    Rule: configuração das restrições do furo; error
-    @(60.5000 mm, 62.4250 mm): Track [PANEL_NEG] on F.Cu, length 13.0000 mm
-    @(62.5000 mm, 62.5000 mm): NPTH pad of H1
-[shorting_items]: Itens em curto-circuito de duas redes (redes PANEL_POS e PANEL_NEG)
-    Local override; error
-    @(73.5000 mm, 147.5750 mm): Track [PANEL_POS] on F.Cu, length 63.0000 mm
-    @(103.7500 mm, 148.5000 mm): Via [PANEL_NEG] on F.Cu - B.Cu
+** Found 13 DRC violations **
 [lib_footprint_issues]: A biblioteca de footprints 'ICARUS_Solar' não está ativada na configuração atual
     Local override; warning
     @(105.0000 mm, 84.4250 mm): Footprint SC1
@@ -73,7 +29,7 @@
     @(60.5000 mm, 137.0000 mm): Footprint TP5
 [lib_footprint_mismatch]: O footprint 'D_SOD-123' não corresponde à cópia na biblioteca 'Diode_SMD'
     Local override; warning
-    @(128.0000 mm, 149.0000 mm): Footprint D1
+    @(120.0000 mm, 138.0000 mm): Footprint D1
 [lib_footprint_mismatch]: O footprint 'MountingHole_3.2mm_M3' não corresponde à cópia na biblioteca 'MountingHole'
     Local override; warning
     @(62.5000 mm, 62.5000 mm): Footprint H1

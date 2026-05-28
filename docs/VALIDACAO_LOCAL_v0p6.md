@@ -51,13 +51,12 @@ Resultado DRC CLI:
 
 - O DRC CLI abortou no macOS com exit code `-1` (registado em `reports/DRC_v0p6.rpt` e `reports/DRC_v0p6_layout_only.rpt`).
 - Em 2026-05-28 o DRC foi corrido com sucesso no KiCad 10.0 (Windows), com schematic parity: `reports/DRC_v0p6_kicad10_win.rpt` (ERC: `reports/ERC_v0p6_kicad10_win.rpt`).
-- Paridade esquematico<->PCB: **0 problemas** (confirma a correcao de polaridade de SC2). Itens desconectados: **0**.
-- Total: **24 violacoes = 11 erros + 13 avisos**.
-- Erros de layout (a corrigir antes de fabrico):
-  - 2x `shorting_items`: **curto entre `PANEL_POS` e `PANEL_NEG`** junto a J1 (bus inferior de PANEL_POS demasiado perto das vias de PANEL_NEG em (103.75, 148.5) e (126, 148.5)).
-  - 6x `hole_clearance`: pistas dentro dos furos M3 (H1..H4), isolamento 0.0 mm vs 0.25 mm.
-  - 3x `clearance`: 0.15 mm vs 0.20 mm na zona de J1.
-- Avisos (13): 3x bibliotecas locais nao ativadas no contexto CLI (ver waiver); 10x `lib_footprint_mismatch` em footprints standard (TestPoint/Diode/MountingHole) que diferem das copias de biblioteca.
+- A primeira corrida (estado anterior) tinha 11 erros de layout, incluindo um curto `PANEL_POS`/`PANEL_NEG` e pistas dentro dos furos M3, e ainda a anti-serie das celulas (ver `CORRECAO_TOPOLOGIA_SERIE_v0p6.md`).
+- Apos a correcao de topologia (serie 2S real) e o reroute completo, a corrida atual da:
+  - Paridade esquematico<->PCB: **0 problemas**. Itens desconectados: **0**. Curtos: **0**. `clearance`/`hole_clearance`: **0**.
+  - Total: **13 violacoes = 0 erros + 13 avisos**.
+- Avisos (13): 3x bibliotecas locais nao ativadas no contexto CLI (ver waiver); 10x `lib_footprint_mismatch` em footprints standard (TestPoint/Diode/MountingHole) que diferem das copias de biblioteca. Nenhum e erro.
+- Plots regenerados: `reports/v0p6_top.svg`, `reports/v0p6_bottom.svg`, `reports/v0p6_fab.svg`.
 
 ## Bloqueadores antes de fabrico
 
@@ -66,4 +65,4 @@ Resultado DRC CLI:
 - Cobre sob celula ainda precisa de decisao final de isolamento/keepout.
 - Harness real ainda nao validado pino a pino.
 - Analise termica ainda pendente para o risco `Voc_2S > 5.5 V` em frio.
-- Erros de DRC de layout por corrigir: curto `PANEL_POS`/`PANEL_NEG` junto a J1 e pistas dentro dos furos M3 (ver `reports/DRC_v0p6_kicad10_win.rpt`).
+- Esquema de contacto de verso da celula e geometria das tabs por confirmar com o desenho de montagem CIC do fornecedor (o routing e a colocacao de D1 sao provisorios ate la).
